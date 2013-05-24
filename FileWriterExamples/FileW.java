@@ -7,60 +7,64 @@ import java.io.File;
 
 public class FileW{
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) {
     
-        System.out.println("Please write what you would like your file to be called.");
-        Scanner in = new Scanner(System.in);
+        try{
+    
+            System.out.println("Please write what you would like your file to be called.");
+            Scanner in = new Scanner(System.in);
         
-        String hi = in.nextLine();
+            String hi = in.nextLine();
+            
         
+            File files = new File(hi+".txt");
     
-        File files = new File(hi+".txt");
-
-        FileWriter file = new FileWriter(files);
-    
-        file.write("1,     Hello,    Keith,        3, true");
-    
-        file.close();
-    
-        FileReader read = new FileReader(files);
-    
-        Scanner scan = new Scanner(read);
-    
-        scan.useDelimiter(", * ");
-    
-        while ( scan.hasNext()){
+            FileWriter file = new FileWriter(files);
         
-            if( scan.hasNextInt() ){
-            
-                System.out.println("Int: " + scan.nextInt() );
-            }
+            file.write("1,     Hello,    Keith,        3, true");
         
-            else if( scan.hasNextDouble() ){
+            file.close();
+        
+            FileReader read = new FileReader(files);
+        
+            Scanner scan = new Scanner(read);
+        
+            scan.useDelimiter(", * ");
+        
+            while ( scan.hasNext()){
             
-                System.out.println("Double: " + scan.nextDouble() );
+                if( scan.hasNextInt() ){
+                
+                    System.out.println("Int: " + scan.nextInt() );
+                }
+            
+                else if( scan.hasNextDouble() ){
+                
+                    System.out.println("Double: " + scan.nextDouble() );
+                }
+                
+                else if( scan.hasNextBoolean() ){
+                
+                    System.out.println("Boolean: " + scan.nextBoolean() ) ;
+                }
+                
+                else if( scan.hasNextLine() ){
+                
+                
+                    System.out.println("String: " + scan.next() );
+                }
+                
+                else{
+                    break;
+                } 
             }
-            
-            else if( scan.hasNextBoolean() ){
-            
-                System.out.println("Boolean: " + scan.nextBoolean() ) ;
-            }
-            
-            else if( scan.hasNextLine() ){
-            
-            
-                System.out.println("String: " + scan.next() );
-            }
-            
-            else{
-                break;
-            }
-    
+    read.close();
         
         }
         
-    read.close();
-    
+        catch(IOException e){
+            System.out.print("Trouble reading/writing to file..." + e.getMessage() );
+        }
     }
         
 }   
