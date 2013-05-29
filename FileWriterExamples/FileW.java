@@ -58,7 +58,8 @@ public class FileW{
                     break;
                 } 
             }
-    read.close();
+    
+                    read.close();
         
         }
         
