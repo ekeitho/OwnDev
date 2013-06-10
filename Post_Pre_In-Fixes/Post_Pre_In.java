@@ -18,13 +18,28 @@ public class Post_Pre_In{
         
         while( equation_scan.hasNext() ){
         
-            System.out.println( equation_scan.next() );
+            String s = equation_scan.next();
+            
+            if( s.equals("/") || s.equals("*") || s.equals("+") || s.equals("-") ||
+                    s.equals("(") || s.equals(")")){
+                    
+                stack.push( s );
+            }
+        
+            else{
+                
+                System.out.print(s);
+            }
+            
         }
+        
+        stack.pop();
+        System.out.print( stack );
         
         
         
             
-        System.out.println("Please enter what kind of notation you'd like to generator your equation to.");
+        /*System.out.println("Please enter what kind of notation you'd like to generator your equation to.");
         System.out.print("Postfix, Prefix, or Infix: ");
         
         Scanner scan2 = new Scanner(System.in);
@@ -43,7 +58,7 @@ public class Post_Pre_In{
         else if( notation.equals("Infix") || notation.equals("infix") ){
         
             System.out.println("This is infix");
-        }
+        }*/
     
     
     
