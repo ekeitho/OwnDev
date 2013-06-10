@@ -6,25 +6,29 @@ public class Post_Pre_In{
     public static void main(String[] args){
     
         Stack<String> stack = new Stack<String>();
-    
-    
-        System.out.println("Please enter an algebraic equation that you would like to generate a fixation out of.");
-        System.out.println("Supports expressions such as, (A+B)*(C-D), but"+ 
-            " won't work for multiple parantheses such as, A*(B(C+D)).");
-        
-        Scanner scan = new Scanner(System.in);
-        String equation = scan.nextLine();        
-        Scanner equation_scan = new Scanner(equation).useDelimiter("\\s*");
-        
-        String output = "";
+        LinkedList<String> linked = new LinkedList<String>();
         
         System.out.println("\nPlease enter what kind of notation you'd like to generator your equation to.");
         System.out.print("Postfix, Prefix, or Infix: ");
         
         Scanner scan2 = new Scanner(System.in);
-        String notation = scan.nextLine();
+        String notation = scan2.nextLine();
+
+        System.out.println("Please enter an algebraic equation that you would like to generate a fixation out of.");
+        System.out.println("Supports expressions such as, (A+B)*(C-D), but"+ 
+            " won't work for multiple parantheses such as, A*(B(C+D)).");
         
-        if( notation.equals("Postfix") || notation.equals("postfix") ){        
+        Scanner scan = new Scanner(System.in);
+        String equation = scan.nextLine();  
+        
+        String output = "";
+        
+        
+        
+        if( notation.equals("Postfix") || notation.equals("postfix") ){    
+        
+            Scanner equation_scan = new Scanner(equation).useDelimiter("\\s*");
+                
             while( equation_scan.hasNext() ){        
                 boolean seen = false;        
                 String s = equation_scan.next();
@@ -64,14 +68,23 @@ public class Post_Pre_In{
                //something was added in the stack recently, we need to look into
                //it and see whether or not if what was added in it was a * or /
                //IF * or / was found, pop it, to keep order of operations
+               //Then have to check whether the next peek is - or + 
                if(!stack.empty() && seen){            
                    if( stack.peek().equals("*") || stack.peek().equals("/") ){               
-                       output = output + stack.pop();
+                       output += stack.pop();
+                       
+                       if(stack.empty()){
+                       
+                       }
+                       
+                       else if(stack.peek().equals("-") || stack.peek().equals("+")){
+                           output += stack.pop();
+                       }
                    }
                }             
             }
        
-            //add on to output with whatever is left on the stack
+            //add on to output with whatever is left on the stack(A+B)*(C-D)
             if( !stack.empty()){
                 while(!stack.empty()){
                     output += stack.pop();
@@ -81,9 +94,63 @@ public class Post_Pre_In{
             System.out.println("\n" + "Postfix Notation: " + output);
         }
         
-        else if( notation.equals("Prefix") || notation.equals("prefix") ){        
-            System.out.println("This is prefix");
+        else if( notation.equals("Prefix") || notation.equals("prefix") ){  
+        
+        String backwards = new StringBuilder(equation).reverse().toString();
+        Scanner equation_scan = new Scanner(backwards).useDelimiter("\\s*");
+              
+        while( equation_scan.hasNext() ){        
+                boolean seen = false;        
+                String s = equation_scan.next();
+            
+                //if s equals to any of these symbols add them onto the stack
+                if( s.equals("/") || s.equals("*") || s.equals("+") || s.equals("-") ||
+                        s.equals(")") ){                    
+                    stack.push( s );
+                }                        
+            
+                else if( s.equals( "(" )){            
+                    while ( ! stack.peek().equals(")")){
+                        linked.addFirst( stack.pop());  
+                    }
+                
+                    //this will pop of the ")" symbol
+                    stack.pop();               
+                }
+        
+                else{
+                    //this will print any number or letter
+                    linked.addFirst( s);
+                    seen = true;      
+                }
+            
+               //the reason behind setting seen is true, is if we added a letter and
+               //something was added in the stack recently, we need to look into
+               //it and see whether or not if what was added in it was a * or /
+               //IF * or / was found, pop it, to keep order of operations
+               if(!stack.empty() && seen){            
+                   if( stack.peek().equals("*") || stack.peek().equals("/") ){               
+                       linked.addFirst( stack.pop() );
+                   }
+               }             
+            }
+       
+            //add on to output with whatever is left on the stack(A+B)*(C-D)
+            if( !stack.empty()){
+                while(!stack.empty()){
+                    linked.addFirst( stack.pop() );
+                }
+            }
+            
+            for(int i=0; i< linked.size(); i++){
+            
+                output += linked.get(i)+"";
+            
+            }
+            
+            System.out.println("\n" + "Prefix Notation: " + output );
         }
+
         
         else if( notation.equals("Infix") || notation.equals("infix") ){
             //this prints whatever was entered
