@@ -9,6 +9,7 @@ public class Post_Pre_In{
     
     
         System.out.println("Please enter an algebraic equation that you would like to generate a fixation out of.");
+        System.out.println("Supports expressions such as, (A+B)*(C-D), but won't work for multiple parantheses such as, A*(B(C+D)).");
         
         Scanner scan = new Scanner(System.in);
         String equation = scan.nextLine();        
