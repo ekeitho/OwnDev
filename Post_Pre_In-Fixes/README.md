@@ -7,4 +7,4 @@ Infix notaiton: A * B + C / D
 
 Postfix notation: A B * C D / +	
 
-Prefix notation: + * A B / C D
+(PROGRAM DOES NOT DO THIS YET) Prefix notation: + * A B / C D
