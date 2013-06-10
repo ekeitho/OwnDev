@@ -9,12 +9,10 @@ public class Post_Pre_In{
     
     
         System.out.println("Please enter an algebraic equation that you would like to generate a fixation out of.");
-        System.out.println("Please leave spaces inbetween every symbol and character.");
-        System.out.println("Such as: ( A + B ) - D * ( C + D )");
         
         Scanner scan = new Scanner(System.in);
         String equation = scan.nextLine();        
-        Scanner equation_scan = new Scanner(equation).useDelimiter(" ");
+        Scanner equation_scan = new Scanner(equation).useDelimiter("\\s*");
         
         String output = "";
         
@@ -101,7 +99,9 @@ public class Post_Pre_In{
         }
         
         else if( notation.equals("Infix") || notation.equals("infix") ){
-        
+            //this prints whatever was entered
+            //this shoud make sense why if not, check out:
+            //http://givemeacscjob.tumblr.com/post/52611623786/prefix-infix-and-postfix-notation
             System.out.println(equation);
         }
     
