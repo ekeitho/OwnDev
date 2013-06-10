@@ -60,7 +60,7 @@ public class Post_Pre_In{
                     seen = true;      
                 }
             
-               //the reason behind setting count 2, is if we added a letter and
+               //the reason behind setting seen is true, is if we added a letter and
                //something was added in the stack recently, we need to look into
                //it and see whether or not if what was added in it was a * or /
                //IF * or / was found, pop it, to keep order of operations
