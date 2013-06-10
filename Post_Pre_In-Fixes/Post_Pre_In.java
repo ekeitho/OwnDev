@@ -18,7 +18,7 @@ public class Post_Pre_In{
         
         String output = "";
         
-        System.out.println("Please enter what kind of notation you'd like to generator your equation to.");
+        System.out.println("\nPlease enter what kind of notation you'd like to generator your equation to.");
         System.out.print("Postfix, Prefix, or Infix: ");
         
         Scanner scan2 = new Scanner(System.in);
@@ -78,7 +78,7 @@ public class Post_Pre_In{
                 }
             }
             
-            System.out.println(output);
+            System.out.println("\n" + "Postfix Notation: " + output);
         }
         
         else if( notation.equals("Prefix") || notation.equals("prefix") ){        
