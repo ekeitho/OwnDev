@@ -25,6 +25,8 @@ function URL (urlString)
 	}
 }
 
+//practice using different method techniques in javascript
+
 URL.prototype.getField = function(field)
 {
 	return map.get(field);
@@ -35,6 +37,7 @@ function Map()
 	this.keys = new Array();
         this.data = new Object();
 
+	//another way in writing a method in javascript
         this.put = function(key, value)
         {
     	       if(this.data[key] == null)
@@ -44,7 +47,7 @@ function Map()
                this.data[key] = value;
         };
 
-        this.get = function(key)
+        this.get =  function(key)
         {
   	        return this.data[key];
         };
