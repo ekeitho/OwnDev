@@ -5,13 +5,18 @@ function URL (urlString)
 {
 	this.urlString = urlString;
 
-	var query = new Array();
-	
-	var query = urlString.split("?");
+	//splits the url from the domain name
+	//and the querry
+	var url = new Array();	
+	var url = urlString.split("?");
 
+	//gets the query part of the URL
+	var query = url[1];
+
+	//if query has more than one field
+	//then we must seperate them
 	var fields = new Array();
-
-	var fields = query[1].split("&");
+	var fields = query.split("&");
 
 	map = new Map();
 
@@ -56,3 +61,5 @@ function Map()
 var feedback = new URL("http://ekeitho.com?post=13&tag=running");
 console.log( feedback.getField("post") );
 
+//makes sure that if it is not in the map, it returns 'undefined'
+console.log( feedback.getField("kadlj") );
