@@ -72,4 +72,6 @@ console.log( feedback.getField("post") );
 //makes sure that if it is not in the map, it returns 'undefined'
 console.log( feedback.getField("kadlj") );
 
+//will allow me to create a URL without a query string
+//with no crash
 var noQuery = new URL("http://ekeitho.com/");
