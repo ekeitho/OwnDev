@@ -7,26 +7,34 @@ function URL (urlString)
 
 	//splits the url from the domain name
 	//and the querry
-	var url = new Array();	
 	var url = urlString.split("?");
 
-	//gets the query part of the URL
-	var query = url[1];
-
-	//if query has more than one field
-	//then we must seperate them
-	var fields = new Array();
-	var fields = query.split("&");
-
-	map = new Map();
-
-	for(var count = 0; count < fields.length; count++)
+	//if there is no query string
+	//the array size of 'url' will be 1
+	if (url.length == 1)
 	{
-	
-	    var fValues = new Array();	
-	    fValues = fields[count].split("=");
+		console.log("Your URL doesn't contain a query.");
+	}	
 
-	    map.put( fValues[0], fValues[1]);	
+	else
+	{
+		//gets the query part of the URL
+		var query = url[1];
+
+		//if query has more than one field
+		//then we must seperate them
+		var fields = query.split("&");
+
+		map = new Map();
+
+		for(var count = 0; count < fields.length; count++)
+		{
+	
+	    		var fValues = new Array();	
+	    		fValues = fields[count].split("=");
+
+	    		map.put( fValues[0], fValues[1]);	
+		}
 	}
 }
 
@@ -63,3 +71,5 @@ console.log( feedback.getField("post") );
 
 //makes sure that if it is not in the map, it returns 'undefined'
 console.log( feedback.getField("kadlj") );
+
+var noQuery = new URL("http://ekeitho.com/");
