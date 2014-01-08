@@ -33,6 +33,11 @@ function URL (urlString)
 	    		var fValues = new Array();	
 	    		fValues = fields[count].split("=");
 
+			if( fValues.length == 1)
+			{
+				console.log("Found field without value.");
+			}			
+
 	    		map.put( fValues[0], fValues[1]);	
 		}
 	}
@@ -75,3 +80,6 @@ console.log( feedback.getField("kadlj") );
 //will allow me to create a URL without a query string
 //with no crash
 var noQuery = new URL("http://ekeitho.com/");
+
+//this tests that there is a field without a value
+var noValue = new URL("http://ekeitho.com?toast");
