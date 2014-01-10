@@ -1,5 +1,5 @@
 var urlString;
-var map;
+var map = {};
 
 function URL (urlString)
 {
@@ -25,8 +25,6 @@ function URL (urlString)
 		//then we must seperate them
 		var fields = query.split("&");
 
-		map = new Map();
-
 		for(var count = 0; count < fields.length; count++)
 		{
 	
@@ -38,7 +36,7 @@ function URL (urlString)
 				console.log("Found field without value.");
 			}			
 
-	    		map.put( fValues[0], fValues[1]);	
+	    		map[fValues[0]] = fValues[1];
 		}
 	}
 }
@@ -47,28 +45,7 @@ function URL (urlString)
 
 URL.prototype.getField = function(field)
 {
-	return map.get(field);
-}
-
-function Map()
-{
-	this.keys = new Array();
-        this.data = new Object();
-
-	//another way in writing a method in javascript
-        this.put = function(key, value)
-        {
-    	       if(this.data[key] == null)
-               {
-               		this.keys.push(key);
-               }
-               this.data[key] = value;
-        };
-
-        this.get =  function(key)
-        {
-  	        return this.data[key];
-        };
+	return map[field];
 }
 
 var feedback = new URL("http://ekeitho.com?post=13&tag=running");
