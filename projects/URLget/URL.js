@@ -5,9 +5,9 @@ function URL (urlString)
 {
 	this.urlString = urlString;
 	
-	this.getField = function(key){
-		return map[key];
-	}
+	//this.getField = function(key){
+	//	return map[key];
+	//}
 
 	//splits the url from the domain name
 	//and the querry
@@ -47,10 +47,10 @@ function URL (urlString)
 
 //practice using different method techniques in javascript
 
-//URL.prototype.getField = function(field)
-//{
-//	return map[field];
-//}
+URL.prototype.getField = function(field)
+{
+	return map[field];
+}
 
 var feedback = new URL("http://ekeitho.com?post=13&tag=running");
 console.log( feedback.getField("post") );
