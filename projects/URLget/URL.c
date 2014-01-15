@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "hash.h"
 
 
 typedef struct
@@ -7,8 +8,7 @@ typedef struct
 	char urlString[100];
 } URL;
 
-void createUrlMap(URL *url);
-
+void createUrlMap(URL *url, Hash *hash);
 
 int main()
 {
@@ -16,14 +16,19 @@ int main()
 	printf("Please enter a valid url string.");
 	scanf("%s", url.urlString);
 
-	createUrlMap(&url);	
+
+	Hash *hash = hash_new(10);
+	createUrlMap(&url, hash);	
+
+	printf("hello => %s\n", hash_lookup(hash, "tag"));	
+		
 
 }
 
-void createUrlMap(URL *url)
+void createUrlMap(URL *url, Hash *hash)
 {
 	char *running, *token, *querry;
-	char *fields[10];
+	char *fValues[2];
 	int count = 0;
 	
 	running = strdup(url->urlString);		
@@ -32,20 +37,34 @@ void createUrlMap(URL *url)
 		if (count == 1)
 		{
 			querry = token;
-			printf("HI");
 		}
 		count++;
 	}
-
 	count = 0;
 
 
 	running = strdup(querry);
+		
 	while( (token = strsep(&running, "&")) != NULL )
 	{
-		fields[count] = token;		
+		char *temp; 
+		char *token2; //need another token for the = seperator
+		temp = strdup(token); //loads 'field=value'
+
+		while( (token2= strsep(&temp, "=")) != NULL )
+		{
+			fValues[count] = token2; //need to store field
+						 //and value into an array
+			count++;	
+		}
+	
+		hash_insert( hash, fValues[0], fValues[1] );
+
+		//errors in putting in array values?!?
 	}
 
-	
+	hash_insert(hash, "tag", "hi"); //this works...
+
+	printf("hello => %s\n", hash_lookup(hash, "tag"));
 
 }
