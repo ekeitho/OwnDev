@@ -17,7 +17,7 @@ int main()
 	scanf("%s", url.urlString);
 
 
-	Hash *hash = hash_new(10);
+	Hash *hash = hash_new(100);
 	createUrlMap(&url, hash);	
 
 	printf("hello => %s\n", hash_lookup(hash, "tag"));	
@@ -46,24 +46,25 @@ void createUrlMap(URL *url, Hash *hash)
 	while( (token = strsep(&running, "&")) != NULL )
 	{
 		char *temp; 
-		char *token2; //need another token for the = seperator
+		char *token1; //need another token for the = seperator
+		char *token2;
+		char *permtoken;
+		char *permtoken2;
 		temp = strdup(token); //loads 'field=value'
 
 
 
-		while( (token2 = strsep(&temp, "=")) != NULL )
+		while( (token1 = strsep(&temp, "=")) != NULL )
 		{
-			int length = strlen(token2);
-			char field[] = "    ";
-			sprintf(field, "%s", token2);
 
+			permtoken = malloc(sizeof(char)* (strlen(token1)+1));
+			strcpy(permtoken, token1);
 			
-			char *token3 = strsep(&temp, "=");
-			length = strlen(token3);
-			char value[]= "  ";
-			sprintf(value, "%s", token3);	
-			
-			hash_insert(hash, field, "YO");				
+			token2 = strsep(&temp, "=");
+			permtoken2 = malloc(sizeof(char)*strlen(token2)+1);
+			strcpy(permtoken2, token2);			
+
+			hash_insert(hash, permtoken, permtoken2);				
 		}
 	}
 
