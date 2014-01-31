@@ -72,6 +72,7 @@ class MetroPop:
                     #cities with largest Numperic Population Increase
                     rateFrom2010_12,
                     split[0],
+                    split[1],
                     rateFrom2010_11,
                     rateFrom2011_12,
                     weightedRate
@@ -125,7 +126,7 @@ count = 1
 
 print "Top 5 Cities to Target Based on Population Growth Rate\n"
 for top5 in heapq.nlargest(5, mp.getRateQueue()):
-    print "%1.f. " % count + top5[1]
+    print "%1.f. " % count + top5[1] + ", " + top5[2]
     print "      : " + "%.3f" % top5[0] + "%"
     count += 1
 
@@ -134,7 +135,7 @@ count = 1
 print "\n"
 print "Top 5 Cities to Avoid Based on Population Growth Rate\n"
 for least5 in heapq.nsmallest(5, mp.getRateQueue()):
-    print "%1.f. " % count + least5[1]
+    print "%1.f. " % count + least5[1] + ", " + least5[2]
     print "      : " + "%.3f" % least5[0] + "%"
     count += 1
 
