@@ -1,0 +1,40 @@
+Top 5 Cities to Target Based on Population Growth Rate
+
+1. San Marcos city, Texas
+      : 5.803%
+2. Cedar Park city, Texas
+      : 5.632%
+3. Georgetown city, Texas
+      : 4.630%
+4. Frisco city, Texas
+      : 4.490%
+5. Pasco city, Washington
+      : 4.366%
+
+
+Top 5 Cities to Avoid Based on Population Growth Rate
+
+1. Jacksonville city, North Carolina
+      : -4.102%
+2. Youngstown city, Ohio
+      : -1.571%
+3. Cleveland city, Ohio
+      : -0.891%
+4. Dearborn city, Michigan
+      : -0.861%
+5. Hampton city, Virginia
+      : -0.860%
+
+
+Top 5 States to Target (cumulative percentage)
+
+1. Texas
+      : 1873.31%
+2. California
+      : 737.66%
+3. Florida
+      : 634.89%
+4. North Dakota
+      : 632.68%
+5. North Carolina
+      : 512.14%
