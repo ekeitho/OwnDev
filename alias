@@ -10,3 +10,8 @@ updateAlias(){
 }
 alias upa=updateAlias
 
+# alias for python editor 
+pythonEditor(){
+    autopep8 --in-place --aggressive $1
+}
+alias autoFormatPython=pythonEditor
