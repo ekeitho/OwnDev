@@ -1,28 +1,28 @@
-5 Cities to Target Based on Population Growth Rate
+Top 5 Cities to Target Based on Population Growth Rate
 
-1. San Marcos city
+1. San Marcos city, Texas
       : 10.995%
-2. Cedar Park city
+2. Cedar Park city, Texas
       : 10.569%
-3. South Jordan city
+3. South Jordan city, Utah
       : 9.097%
-4. Georgetown city
+4. Georgetown city, Texas
       : 9.035%
-5. Frisco city
+5. Frisco city, Texas
       : 8.586%
 
 
 Top 5 Cities to Avoid Based on Population Growth Rate
 
-1. Jacksonville city
+1. Jacksonville city, North Carolina
       : -2.294%
-2. Youngstown city
+2. Youngstown city, Ohio
       : -2.134%
-3. Flint city
+3. Flint city, Michigan
       : -1.705%
-4. Detroit city
+4. Detroit city, Michigan
       : -1.443%
-5. Dearborn city
+5. Dearborn city, Michigan
       : -1.430%
 
 
