@@ -1,0 +1,40 @@
+Top 5 Cities to Target Based on Population Growth Rate
+
+1. New York city, New York
+      : 0.047%
+2. Los Angeles city, California
+      : 0.020%
+3. Houston city, Texas
+      : 0.019%
+4. San Antonio city, Texas
+      : 0.016%
+5. Austin city, Texas
+      : 0.016%
+
+
+Top 5 Cities to Avoid Based on Population Growth Rate
+
+1. Detroit city, Michigan
+      : -0.003%
+2. Cleveland city, Ohio
+      : -0.002%
+3. Toledo city, Ohio
+      : -0.001%
+4. Rockford city, Illinois
+      : -0.001%
+5. Buffalo city, New York
+      : -0.001%
+
+
+Top 5 States to Target (cumulative percentage)
+
+1. Texas
+      : 1873.31%
+2. California
+      : 737.66%
+3. Florida
+      : 634.89%
+4. North Dakota
+      : 632.68%
+5. North Carolina
+      : 512.14%
