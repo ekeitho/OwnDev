@@ -1,0 +1,40 @@
+Top 5 Cities to Target Based on Population Growth Rate
+
+1. San Marcos city, Texas
+      : 4.907%
+2. South Jordan city, Utah
+      : 4.867%
+3. Midland city, Texas
+      : 4.865%
+4. Cedar Park city, Texas
+      : 4.674%
+5. Clarksville city, Tennessee
+      : 4.426%
+
+
+Top 5 Cities to Avoid Based on Population Growth Rate
+
+1. Delano city, California
+      : -2.183%
+2. Montgomery city, Alabama
+      : -1.210%
+3. Flint city, Michigan
+      : -0.928%
+4. Yuma city, Arizona
+      : -0.777%
+5. Hammond city, Indiana
+      : -0.689%
+
+
+Top 5 States to Target (cumulative percentage)
+
+1. Texas
+      : 1873.31%
+2. California
+      : 737.66%
+3. Florida
+      : 634.89%
+4. North Dakota
+      : 632.68%
+5. North Carolina
+      : 512.14%
