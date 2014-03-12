@@ -15,3 +15,6 @@ pythonEditor(){
     autopep8 --in-place --aggressive $1
 }
 alias autoFormatPython=pythonEditor
+
+# alias for sshing to school
+alias calpoly="ssh kaabdull@unix2.csc.calpoly.edu"
