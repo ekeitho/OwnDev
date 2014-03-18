@@ -18,9 +18,8 @@
     <link href="assets/css/perfect-scrollbar.css" rel="stylesheet">
 
 
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
 	<!-- INFORMATION SCROLL BAR -->
 	<script src="assets/js/jquery.mousewheel.js"></script>
@@ -64,7 +63,7 @@
 
     				container = "#" + this.id;
     				console.log(this.id);
-    				$(container).addClass('topic_font');
+
 
 
     				//what is being slid is the topic's info
@@ -73,15 +72,28 @@
     				// if it is the first click
     				if( temp == undefined)
     				{
-    					$(container_info).toggle('slide',1000);
+    					$(container).addClass('topic_font');
+    					$(container_info).slideToggle("slow");
 
     				}
 
     				// if you click on the same container twice
     				else if( container != undefined && temp == container)
     				{
-    					$(container_info).toggle('slide',1000);
-    					$(container).removeClass('topic_font');
+    					$(container_info).toggle('slide', 800);
+
+    					// have to check this since if they click it three times
+    					// the topic_font will not add again
+    					if( $(container).hasClass('topic_font') )
+    					{
+    						$(container).removeClass('topic_font');
+    					}
+
+    					else
+    					{
+    						$(container).addClass('topic_font');
+    					}
+    					
     				}
 
     				// if you click on a different container
@@ -89,7 +101,10 @@
     				{
     					$(temp).removeClass('topic_font');
     					$(temp + "_info").hide();
-    					$(container_info).toggle('slide', 1000);
+
+    					$(container).addClass('topic_font');
+    					$(container_info).slideToggle("slow");
+
 
     				}
 
@@ -155,7 +170,8 @@
 			</li>
 		</ul>
 
-	   	<ul id="tab_info" class="centered">
+	   	<ul id="tab_info" >
+
 	   			<div id="school_info" class="information_display">
 					INFO
 				</div>
@@ -171,6 +187,8 @@
 								Built the API using Ruby on Rails and PostgreSQL and deployed it using Heroku
 							</li>
 						</ul>
+
+						<BR><BR>
 
 						<ul> 
 							Cal Poly 3-Day SLO Startup - Vitalyze
@@ -191,14 +209,7 @@
 							</li>
 						</ul>
 
-						<ul> Student Worker at Stanford
-							<li> 
-								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
-							</li>
-						</ul>
-
-						<li> Summer Internship at TeachAIDS</li>
-
+						<BR><BR>
 
 						<ul> Student Worker at Stanford
 							<li> 
@@ -206,39 +217,39 @@
 							</li>
 						</ul>
 
-						<ul> Student Worker at Stanford
-							<li> 
-								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
+						<BR><BR>
+
+						<ul> Summer Internship at TeachAIDS
+							<li>
+								Worked on non-profits Website using JavaScript, HTML, and CSS
+							</li>
+							<li>
+								Worked on TeachAIDS animations using Adobe Flash Professional
 							</li>
 						</ul>
 
-						<ul> Student Worker at Stanford
-							<li> 
-								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
-							</li>
-						</ul>
-
-						<ul> Student Worker at Stanford
-							<li> 
-								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
-							</li>
-						</ul>
 
 					
 				</div>
 
 				<div id="coursework_info" class="information_display" >
-					<div>	
-							INFO
-							<br><br><br><br>
-							INFO2
-							<br><br><br><br>
-							INFO3
-							<br><br><br><br>
-							INFO5
-							<br><br><br><br>
-							INFO4
+					<div>
+						<ul>
+							<li>Fundamentals of Computer Science – C/C++, 
+								Java (CPE 101,102,103)</li>
 
+							<li>Discrete Structures/Algorithms (CSC 141)</li>
+
+							<li>Intro to Computing Systems (CSC 225)</li>
+
+							<li>Creative, Serious and Playful 
+								Science of Android Apps (Coursera)</li>
+
+							<li>Calculus I, II</li>
+
+							<li>Engineering Science – Graphical 
+								Communication/Manufacturing/Design</li>
+						</ul>
 					</div>
 				</div>
 
