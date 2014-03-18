@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Keith Abdulla</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- INCLUDED IF INFO IS TOO LONG -->
+    <link href="assets/css/perfect-scrollbar.css" rel="stylesheet">
+
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+	<!-- INFORMATION SCROLL BAR -->
+	<script src="assets/js/jquery.mousewheel.js"></script>
+	<script src="assets/js/perfect-scrollbar.js"></script>
+
+
+
+
+  </head>
+
+  <body>
+
+  	<script>
+
+  			var container;
+
+    		$(window).scroll(function(){
+    			$('.navbar-inverse').animate(
+    			{
+    				'padding-top' : '10px',
+    				'padding-bottom' : '10px'
+    			},1000);
+    		});
+
+    		
+
+    		$(document).ready(function(e){
+
+    			$("#coursework_info, #experience_info, #accomplishments_info, #school_info").perfectScrollbar({
+				  wheelSpeed: 20,
+				  //wheelPropagation: true - means if you scroll more than you can
+				  // inside of that div, then it'll scroll onto the page as well
+				  minScrollbarLength: 20
+				});
+
+
+    			$('#tab_topics li').click(function(){
+    				//keeps track of last topic chosen
+    				var temp = container;
+
+
+    				container = "#" + this.id;
+    				console.log(this.id);
+    				$(container).addClass('topic_font');
+
+
+    				//what is being slid is the topic's info
+    				var container_info = container + "_info";
+    				
+    				// if it is the first click
+    				if( temp == undefined)
+    				{
+    					$(container_info).toggle('slide',1000);
+
+    				}
+
+    				// if you click on the same container twice
+    				else if( container != undefined && temp == container)
+    				{
+    					$(container_info).toggle('slide',1000);
+    					$(container).removeClass('topic_font');
+    				}
+
+    				// if you click on a different container
+    				else 
+    				{
+    					$(temp).removeClass('topic_font');
+    					$(temp + "_info").hide();
+    					$(container_info).toggle('slide', 1000);
+
+    				}
+
+
+    			});
+
+    		}); 		
+
+    </script>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">KEITHMAYNN</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://www.github.com/ekeitho">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="http://www.ekeitho.com">Blog</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<!-- +++++ Welcome Section +++++ -->
+	<div id="ww">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<img src="assets/img/user.png" alt="Stanley">
+					<h1>Hi, I'm Keith Abdulla!</h1>
+					<p>I currently attend California Polytechnic State University San Luis Obispo.</p>
+					<p>My plan is to change the world, 8 bits at a time.</p>
+				
+				</div><!-- /col-lg-8 -->
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /ww -->
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	<div class="information">
+
+		<ul id="tab_topics">
+			<li id="school" style="background:white">
+				SCHOOL
+			</li>
+			<li id="experience" style="background:white">
+				EXPERIENCE
+			</li>
+			<li id="coursework" style="background:white">
+				COURSEWORK
+			</li>
+			<li id="accomplishments" style="background:white">
+				ACCOMPLISHMENTS
+			</li>
+		</ul>
+
+	   	<ul id="tab_info" class="centered">
+	   			<div id="school_info" class="information_display">
+					INFO
+				</div>
+	   	
+	   			<div id="experience_info" class="information_display" >
+					
+
+						<ul> Cal Poly 2-Day Hackathon - Eunomia
+							<li> 
+								Helped build an app; Eunomia, for keeping track of your studying hours at the library
+							</li>
+							<li> 
+								Built the API using Ruby on Rails and PostgreSQL and deployed it using Heroku
+							</li>
+						</ul>
+
+						<ul> 
+							Cal Poly 3-Day SLO Startup - Vitalyze
+							<li> 
+								Experienced the fast paced work environment with people I barely knew
+							</li>
+
+							<li> 
+								Helped create a business model and a minimal viable product for our startup Vitalyze
+							</li>
+
+							<li> 
+								Built our website using Twitter Boot Strap and Chartjs
+							</li>
+
+							<li> 
+								Learned to develop successful business pitches through workshops
+							</li>
+						</ul>
+
+						<ul> Student Worker at Stanford
+							<li> 
+								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
+							</li>
+						</ul>
+
+						<li> Summer Internship at TeachAIDS</li>
+
+
+						<ul> Student Worker at Stanford
+							<li> 
+								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
+							</li>
+						</ul>
+
+						<ul> Student Worker at Stanford
+							<li> 
+								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
+							</li>
+						</ul>
+
+						<ul> Student Worker at Stanford
+							<li> 
+								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
+							</li>
+						</ul>
+
+						<ul> Student Worker at Stanford
+							<li> 
+								Worked with Alumni Association as a Student Worker, updating their reunion website, create documentations, update their database, serviced Stanford Professors, etc..
+							</li>
+						</ul>
+
+					
+				</div>
+
+				<div id="coursework_info" class="information_display" >
+					<div>	
+							INFO
+							<br><br><br><br>
+							INFO2
+							<br><br><br><br>
+							INFO3
+							<br><br><br><br>
+							INFO5
+							<br><br><br><br>
+							INFO4
+
+					</div>
+				</div>
+
+				<div id="accomplishments_info" class="information_display">
+					INFO
+				</div>
+	   	</ul>
+
+	</div>
+
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>My Bunker</h4>
+					<p>
+						Cal Poly
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="#">Dribbble</a><br/>
+						<a href="#">Twitter</a><br/>
+						<a href="#">Facebook</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Contact Keith</h4>
+					<p>
+						github.com/ekeitho<br/>
+						650.690.BITS <br/>
+						kaabdull@calpoly.edu
+					</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
